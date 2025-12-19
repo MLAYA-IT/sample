@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Bubd\App\Providers;
+namespace Modules\Sample\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected string $name = 'Bubd';
+    protected string $name = 'Sample';
 
     /**
      * Called before routes are registered.

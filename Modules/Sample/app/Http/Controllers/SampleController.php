@@ -1,18 +1,18 @@
 <?php
 
-namespace Modules\Bubd\App\Http\Controllers;
+namespace Modules\Sample\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BubdController extends Controller
+class SampleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('bubd::index');
+        return view('sample::index');
     }
 
     /**
@@ -20,7 +20,7 @@ class BubdController extends Controller
      */
     public function create()
     {
-        return view('bubd::create');
+        return view('sample::create');
     }
 
     /**
@@ -33,7 +33,7 @@ class BubdController extends Controller
      */
     public function show($id)
     {
-        return view('bubd::show');
+        return view('sample::show');
     }
 
     /**
@@ -41,7 +41,7 @@ class BubdController extends Controller
      */
     public function edit($id)
     {
-        return view('bubd::edit');
+        return view('sample::edit');
     }
 
     /**

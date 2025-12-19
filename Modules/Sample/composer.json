@@ -1,5 +1,5 @@
 {
-    "name": "nwidart/bubd",
+    "name": "nwidart/sample",
     "description": "",
     "authors": [
         {
@@ -17,14 +17,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Modules\\Bubd\\": "App/",
-            "Modules\\Bubd\\Database\\Factories\\": "database/factories/",
-            "Modules\\Bubd\\Database\\Seeders\\": "database/seeders/"
+            "Modules\\Sample\\": "app/",
+            "Modules\\Sample\\Database\\Factories\\": "database/factories/",
+            "Modules\\Sample\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Modules\\Bubd\\Tests\\": "tests/"
+            "Modules\\Sample\\Tests\\": "tests/"
         }
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Bubd\Database\Seeders;
+namespace Modules\Sample\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class BubdDatabaseSeeder extends Seeder
+class SampleDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Bubd\App\Providers;
+namespace Modules\Sample\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 

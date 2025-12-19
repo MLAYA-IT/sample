@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Bubd\App\Providers;
+namespace Modules\Sample\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -8,13 +8,13 @@ use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
-class BubdServiceProvider extends ServiceProvider
+class SampleServiceProvider extends ServiceProvider
 {
     use PathNamespace;
 
-    protected string $name = 'Bubd';
+    protected string $name = 'Sample';
 
-    protected string $nameLower = 'bubd';
+    protected string $nameLower = 'sample';
 
     /**
      * Boot the application events.
