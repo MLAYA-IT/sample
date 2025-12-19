@@ -1,0 +1,11 @@
+{
+    "name": "SampleOne",
+    "alias": "sampleone",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\SampleOne\\App\\Providers\\SampleOneServiceProvider"
+    ],
+    "files": []
+}

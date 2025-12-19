@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Sample\Http\Controllers;
+namespace Modules\SampleOne\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class SampleController extends Controller
      */
     public function index()
     {
-        return view('sample::index');
+        return view('sampleone::index');
     }
 
     /**
@@ -20,7 +20,7 @@ class SampleController extends Controller
      */
     public function create()
     {
-        return view('sample::create');
+        return view('sampleone::create');
     }
 
     /**
@@ -33,7 +33,7 @@ class SampleController extends Controller
      */
     public function show($id)
     {
-        return view('sample::show');
+        return view('sampleone::show');
     }
 
     /**
@@ -41,7 +41,7 @@ class SampleController extends Controller
      */
     public function edit($id)
     {
-        return view('sample::edit');
+        return view('sampleone::edit');
     }
 
     /**

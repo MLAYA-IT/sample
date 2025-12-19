@@ -1,13 +1,13 @@
 <?php
 
-namespace Modules\Sample\Providers;
+namespace Modules\SampleOne\App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected string $name = 'Sample';
+    protected string $name = 'SampleOne';
 
     /**
      * Called before routes are registered.
