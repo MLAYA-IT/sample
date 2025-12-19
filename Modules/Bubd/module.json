@@ -1,0 +1,11 @@
+{
+    "name": "Bubd",
+    "alias": "bubd",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Bubd\\App\\Providers\\BubdServiceProvider"
+    ],
+    "files": []
+}

@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/bubd",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Bubd\\": "App/",
+            "Modules\\Bubd\\Database\\Factories\\": "database/factories/",
+            "Modules\\Bubd\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Bubd\\Tests\\": "tests/"
+        }
+    }
+}
