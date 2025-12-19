@@ -15,16 +15,14 @@ jobs:
         with:
           php-version: 8.3
 
-      - name: Deploy
-        uses: appleboy/ssh-action@master
+      - name: Deploy via SCP
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_SERVER_PORT }}
-          script: |
-            cd /var/www/api
-            git pull origin main
-            composer install --no-dev --optimize-autoloader
-            php artisan module:enable --all
-            php artisan optimize
+          source: "."
+          target: ${{ secrets.SERVER_PATH }}
+          rm: true # optional: remove old files first
+
