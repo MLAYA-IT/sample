@@ -1,37 +1,21 @@
-name: Deploy this SAMPLE MODULE to BUBD DROPLET
+name: Deploy API to BUBD Droplet
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
 
-      - name: Install Composer Dependencies
-        run: composer install --optimize-autoloader --no-dev --no-progress --no-interaction --prefer-dist
-
-      - name: Deploy to server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_SERVER_PORT }}
-          source: "."
-          target: ${{ secrets.SERVER_PATH }}
-
-      - name: Fix permissions on the server
+      - name: Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -39,5 +23,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_SERVER_PORT }}
           script: |
-            sudo chmod -R g+ws /var/www/api/storage
-            sudo chown -R bubd:www-data /var/www/api/storage
+            cd /var/www/api
+            git pull origin main
+            composer install --no-dev --optimize-autoloader
+            php artisan module:enable --all
+            php artisan optimize
