@@ -1,21 +1,24 @@
-name: Deploy API to BUBD Droplet
+name: Deploy this SAMPLE MODULE to BUBD DROPLET
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - uses: shivammathur/setup-php@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
 
-      - name: Deploy via SCP
+      - name: Deploy to server
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_IP }}
@@ -24,5 +27,14 @@ jobs:
           port: ${{ secrets.SSH_SERVER_PORT }}
           source: "."
           target: ${{ secrets.SERVER_PATH }}
-          rm: true # optional: remove old files first
 
+      - name: Fix permissions on the server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_SERVER_PORT }}
+          script: |
+            sudo chmod -R g+ws /var/www/api/storage
+            sudo chown -R bubd:www-data /var/www/api/storage
